@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="180.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/8.0.65"
+            fx:controller="nm.jvision.controle.BematechConfigController">
+    <children>
+        <GridPane hgap="5.0" layoutX="91.0" layoutY="124.0" prefHeight="203.0" prefWidth="580.0" vgap="5.0"
+                  AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0"
+                  AnchorPane.topAnchor="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="157.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="248.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="40.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Label text="Nome da Impressora" GridPane.halignment="RIGHT"/>
+                <Label text="Porta Serial Impressora" GridPane.halignment="RIGHT" GridPane.rowIndex="1"/>
+                <Label text="IP Intranet Sistema" GridPane.halignment="RIGHT" GridPane.rowIndex="2"/>
+                <Label text="Porta IP Intranet" GridPane.halignment="RIGHT" GridPane.rowIndex="3"/>
+                <Label text="Conectar Automático" GridPane.halignment="RIGHT" GridPane.rowIndex="4"/>
+                <TextField fx:id="txtNomeImpressora" GridPane.columnIndex="1">
+                    <tooltip>
+                        <Tooltip anchorLocation="WINDOW_TOP_LEFT" text="Nome Cadastrado no Sistema jVision."/>
+                    </tooltip>
+                </TextField>
+                <TextField fx:id="txtPortaCom" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <tooltip>
+                        <Tooltip anchorLocation="WINDOW_TOP_LEFT" text="Ex: COM1, COM2 ou COM3..."/>
+                    </tooltip>
+                </TextField>
+                <TextField fx:id="txtIpGlassfish" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <tooltip>
+                        <Tooltip anchorLocation="WINDOW_TOP_LEFT" autoHide="true" text="Ex: 192.168.1.124"/>
+                    </tooltip>
+                </TextField>
+                <TextField fx:id="txtPorta" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                    <tooltip>
+                        <Tooltip text="Ex: 8080"/>
+                    </tooltip>
+                </TextField>
+                <CheckBox fx:id="ckBoxConectar" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <tooltip>
+                        <Tooltip text="Conecta Automaticamente ao jVision ao Iniciar o Programa."/>
+                    </tooltip>
+                </CheckBox>
+                <Button mnemonicParsing="false" onAction="#onSaveConfigFile" text="Salvar" GridPane.columnIndex="1"
+                        GridPane.halignment="CENTER" GridPane.rowIndex="5"/>
+                <Button mnemonicParsing="false" onAction="#onClose" text="Cancelar" GridPane.columnIndex="1"
+                        GridPane.halignment="RIGHT" GridPane.rowIndex="5"/>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>
